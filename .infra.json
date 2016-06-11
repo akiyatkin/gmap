@@ -1,0 +1,18 @@
+{
+	"pub":["values", "options", "data"],
+	"js":"Gmap.js",
+	"dependencies":"event",
+	"data":{
+		"href": "/contacts",
+		"logo": "images/logo.png",
+		"phone": "Номер"
+	},
+	"values":[
+		{ 
+			"address": "Тольятти, ул. Фрунзе 2г",
+			"title": "Тольятти, ул. Фрунзе 2г."
+		},{ 
+			"address": "Тольятти, Южное шоссе 27"
+		}
+	]
+}

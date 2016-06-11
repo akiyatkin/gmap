@@ -1,0 +1,6 @@
+{
+	"name":"akiyatkin-gmap",
+	"dependencies":{
+		"gmap3": "~6"
+	}
+}

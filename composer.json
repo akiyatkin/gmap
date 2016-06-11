@@ -1,0 +1,10 @@
+{
+	"name": "akiyatkin/gmap",
+	"description": "Вставка карты гугл",
+	"license": "GPL3",
+	"require":{
+		"infrajs/events":"~1",
+		"infrajs/template":"~1",
+		"infrajs/controller":"~1"
+	}
+}
