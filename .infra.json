@@ -1,6 +1,6 @@
 {
 	"pub":["values", "options", "data"],
-	"js":"Gmap.js",
+	"js":["Gmap.js"],
 	"dependencies":"event",
 	"data":{
 		"href": "/contacts",

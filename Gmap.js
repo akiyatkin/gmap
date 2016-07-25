@@ -2,17 +2,37 @@ Event.classes.Gmap = function(obj) {
 	return obj.id;
 }
 window.Gmap = {
+	move: function(id, tag) {
+		var div = $('#' + id);
+		var latlngbounds = new google.maps.LatLngBounds();
+		div.gmap3({
+			get: {
+				name:"marker",
+				all: true,
+				tag: tag,
+				callback: function (values) {
+					for ( var i = 0; i < values.length; i++ ){
+						latlngbounds.extend(values[i].getPosition());
+					}
+					var map = div.gmap3("get");
+					map.panTo( latlngbounds.getCenter(), map.fitBounds(latlngbounds));
+				}
+			}
+		});
+		
+	},
 	init: function (id) {
+		Event.tik('Gmap.init');
 		Load.require('bower_components/gmap3/dist/gmap3.min.js');
 		Event.one('Controller.onshow', function () {
 			var conf = Config.get('gmap');
 			var values = conf.values;
 			
 			for (var i = 0, l = values.length; i < l; i++) {
-				if (!values[i].options) values[i].options = {};
+				if (!values[i].options) values[i].options = { };
 				if (conf.data.icon) values[i].options.icon = conf.data.icon;
 
-				var data = $.extend({}, conf.data, values[i]);
+				var data = $.extend({ }, conf.data, values[i]);
 				values[i].data = {
 					id:i,
 					data:data,
@@ -69,6 +89,7 @@ window.Gmap = {
 					}
 				}
 			}, "autofit" );
+			Event.fire('Gmap.init');
 		});
 	}
 }
