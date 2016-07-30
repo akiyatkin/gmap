@@ -2,6 +2,7 @@ Event.classes.Gmap = function(obj) {
 	return obj.id;
 }
 window.Gmap = {
+	//Перемещает экран к маркерам с тегом
 	move: function(id, tag) {
 		var div = $('#' + id);
 		var latlngbounds = new google.maps.LatLngBounds();
@@ -19,7 +20,39 @@ window.Gmap = {
 				}
 			}
 		});
-		
+	},
+	//Перемещает экран к маркеру с Title
+	moveNum: function(id, num) {
+		var div = $('#' + id);
+		var latlngbounds = new google.maps.LatLngBounds();
+		div.gmap3({
+			get: {
+				name:"marker",
+				all: true,
+				callback: function (values) {
+					latlngbounds.extend(values[num].getPosition());
+					var map = div.gmap3("get");
+					map.panTo( latlngbounds.getCenter(), map.fitBounds(latlngbounds));
+				}
+			}
+		});
+	},
+	moveAll: function(id) {
+		var div = $('#' + id);
+		var latlngbounds = new google.maps.LatLngBounds();
+		div.gmap3({
+			get: {
+				name:"marker",
+				all: true,
+				callback: function (values) {
+					for ( var i = 0; i < values.length; i++ ){
+						latlngbounds.extend(values[i].getPosition());
+					}
+					var map = div.gmap3("get");
+					map.panTo( latlngbounds.getCenter(), map.fitBounds(latlngbounds));
+				}
+			}
+		});
 	},
 	init: function (id) {
 		Event.tik('Gmap.init');
