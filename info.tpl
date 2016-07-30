@@ -11,4 +11,4 @@
 		<td>График:&nbsp;</td><td>{time}</td>
 	</tr>
 </table>
-<a href="{href}">Контакты</a>
+<a href="{href}">Контакты {title|address}</a>
