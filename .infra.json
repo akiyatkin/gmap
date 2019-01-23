@@ -1,20 +1,15 @@
 {
 	"pub":["values", "options", "data"],
 	"js":["Gmap.js"],
-	"dependencies":["event","gmap3"],
+	"dependencies":["event"],
 	"clutch":{
 		"gmap3":[
 			"vendor/jbdemonte/",
 			"vendor/akiyatkin/gmap/"
 		]
 	},
-	"data":{
-		"href": "/contacts",
-		"logo": "images/logo.png",
-		"phone": "Номер"
-	},
 	"values":[
-		{ 
+		{
 			"address": "Тольятти, ул. Фрунзе 2г",
 			"title": "Тольятти, ул. Фрунзе 2г."
 		},{ 
