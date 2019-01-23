@@ -4,6 +4,21 @@
 	"require":{
 		"infrajs/event":"~1",
 		"infrajs/template":"~1",
-		"infrajs/controller":"~1"
-	}
+		"infrajs/controller":"~1",
+		"jbdemonte/gmap3":"~7"
+	},
+	"repositories": [
+        {
+            "type":"package",
+            "package":{
+                "name":"jbdemonte/gmap3",
+                "version":"v7.2.0",
+                "source":{
+                    "type": "vcs",
+                    "url": "https://github.com/jbdemonte/gmap3",
+                    "reference":"v7.2.0"
+                }
+            }
+        }
+    ]
 }
