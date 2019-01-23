@@ -1,7 +1,13 @@
 {
 	"pub":["values", "options", "data"],
 	"js":["Gmap.js"],
-	"dependencies":"event",
+	"dependencies":["event","gmap3"],
+	"clutch":{
+		"gmap3":[
+			"vendor/jbdemonte/",
+			"vendor/akiyatkin/gmap/"
+		]
+	},
 	"data":{
 		"href": "/contacts",
 		"logo": "images/logo.png",
