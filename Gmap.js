@@ -57,7 +57,7 @@ window.Gmap = {
 	init: function (id, data) {
 		//var conf = Config.get('gmap');
 		//var values = conf.values;
-		//В Таблице должна быть колонка Адрес или Город
+		//В Таблице должна быть колонка Адрес или Город, Центр, Масштаб
 		values = data.data.map(function(val) {
 			var v = {};
 			v.data = val;
@@ -68,13 +68,14 @@ window.Gmap = {
 			}
 			return v;
 		});
+		var center = data.descr['Центр'] || values[0].address;
 		console.log(data);
 
 		Event.tik('Gmap.init');
 		Event.one('Controller.onshow', function () {
 			
 			$('#'+id).gmap3({
-				address:values[0].address,
+				address:center,
 				zoom: Number(data.descr['Масштаб']||5),
 				mapTypeControl: false,
 				mapTypeId : google.maps.MapTypeId.ROADMAP,
