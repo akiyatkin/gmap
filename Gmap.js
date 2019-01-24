@@ -83,7 +83,7 @@ window.Gmap = {
 				scrollwheel: false,
 				streetViewControl: false
 			}).marker(values).infowindow({
-				content: "Hello from Uluru"
+				content: ""
 			}).then( function (infowindow) {
 				var map = this.get(0);
 				var marker = this.get(1);
