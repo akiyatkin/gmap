@@ -1,6 +1,5 @@
 {
 	"pub":["values", "options", "data"],
-	"js":["Gmap.js"],
 	"dependencies":["event"],
 	"clutch":{
 		"gmap3":[
