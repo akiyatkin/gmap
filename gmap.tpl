@@ -26,16 +26,21 @@
 					streetViewControl: false
 		        });
 		        var markers = locations.map(function(location, i) {
-		        	if (!location.lat) return;
+		        	if (!location.lat) return false;
 					return new google.maps.Marker({
 						data: location.data,
 						position: location
 					});
 		        });
+		        markers = markers.filter(function(marker) {
+		        	return marker;
+		        });
 		        var infowindow = new google.maps.InfoWindow({
 					content: "Отзыв"
 				});
+				
 		        markers.map(function (marker) {
+		        	
 		        	marker.addListener('click', function() {
 		        		var data = marker.data;
 						if (!data) return;
@@ -44,6 +49,7 @@
 						infowindow.open(map, marker);
 					});
 		        });
+		       
 
 		        
 		        // Add a marker clusterer to manage the markers.

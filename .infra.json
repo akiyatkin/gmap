@@ -3,8 +3,7 @@
 	"dependencies":["event"],
 	"clutch":{
 		"gmap3":[
-			"vendor/jbdemonte/",
-			"vendor/akiyatkin/gmap/"
+			"vendor/jbdemonte/"
 		]
 	},
 	"values":[
